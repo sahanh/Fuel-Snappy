@@ -18,7 +18,7 @@ Copy the config file from package's  config folder to your app's config folder. 
 $pdf = Pdf::forge();
 header('Content-Type: application/pdf');
 header('Content-Disposition: attachment; filename="file.pdf"');
-echo $snappy->getOutput('http://www.fuelphp.com');
+echo $pdf->getOutput('http://www.fuelphp.com');
 
 ```
 

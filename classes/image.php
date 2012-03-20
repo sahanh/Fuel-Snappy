@@ -12,8 +12,10 @@ class Image
 	 */
 	public static function forge($config = array())
 	{
-		$instance = new \Knp\Snappy\Image();
-		$instance->setOptions(array_merge(static::$_defaults['image'], $config));
+		$options = array_merge(static::$_defaults, $config);
+		
+		$instance = new \Knp\Snappy\Image($options['binary']);
+		$instance->setOptions($options['image']);
 		return $instance;
 	}
 

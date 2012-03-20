@@ -1,0 +1,3 @@
+[submodule "classes/snappy"]
+	path = classes/snappy
+	url = https://github.com/KnpLabs/snappy.git

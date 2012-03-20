@@ -10,38 +10,16 @@ available on OSX, linux, windows.
 You will have to download wkhtmltopdf 0.10.0 >= rc2 in order to use Snappy.
 
 ## Usage
+Copy the config file from package's  config folder to your app's config folder. Add the path to the wkthtmltopdf binary.
 
 ```php
 <?php
 
-
-use Knp\Snappy\Pdf;
-
-$snappy = new Pdf('/usr/local/bin/wkhtmltopdf');
-
-// or you can do it in two steps
-$snappy = new Pdf();
-$snappy->setBinary('/usr/local/bin/wkhtmltopdf');
-
-// Display the resulting image in the browser 
-// by setting the Content-type header to jpg
-$snappy = new Pdf('/usr/local/bin/wkhtmltopdf');
+$pdf = Pdf::forge();
 header('Content-Type: application/pdf');
 header('Content-Disposition: attachment; filename="file.pdf"');
-echo $snappy->getOutput('http://www.github.com');
+echo $snappy->getOutput('http://www.fuelphp.com');
 
-// .. or simply save the PDF to a file
-$snappy = new Pdf('/usr/local/bin/wkhtmltopdf');
-$snappy->generateFromHtml('<h1>Bill</h1><p>You owe me money, dude.</p>', '/tmp/bill-123.pdf');
-
-
-// Pass options to snappy
-// Type wkhtmltopdf -H to see the list of options
-$snappy = new Pdf('/usr/local/bin/wkhtmltopdf');
-$snappy->setOption('disable-javascript', true);
-$snappy->setOption('no-background', true);
-$snappy->setOption('allow', array('/path1', '/path2'));
-$snappy->setOption('cookie', array('key' => 'value', 'key2' => 'value2'));
 ```
 
 ## Credits

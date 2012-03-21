@@ -1,7 +1,7 @@
 <?php
 
 Autoloader::add_core_namespace('Snappy');
-Autoloader::add_namespace('Knp\Snappy');
+Autoloader::add_core_namespace('Knp\Snappy');
 
 Autoloader::add_classes(array(
 
